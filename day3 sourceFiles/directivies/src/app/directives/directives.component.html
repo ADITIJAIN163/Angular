@@ -1,0 +1,8 @@
+<button type="button" (click)='Display()'>Display details</button>
+<p>{{para}}</p>
+
+<div *ngFor="let j of arr">
+<p *ngIf="j<5" >{{j}}</p>
+<p *ngIf="j>=5" style="background-color: blue;">{{j}}</p>
+</div>
+
