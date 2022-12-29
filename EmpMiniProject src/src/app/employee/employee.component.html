@@ -1,0 +1,110 @@
+ <body style="background-color: azure;">
+    <table border="2"  bordercolor="blue" style="width: fit-content;width: 8cm;">
+
+        <tr style="color:rgb(21, 21, 125);">
+    
+            <td><b>Employee Id</b></td>
+    
+            <td><b>Employee Name</b></td>
+    
+            <td><b>Employee Address</b></td>
+    
+            <td><b>Employee mobilemo</b></td>
+    
+            <td><b>Employee email</b></td>
+            <td><b>Edit</b></td>
+            <td><b>Delete</b></td>
+            
+            
+        </tr>
+    
+        <tr  *ngFor = "let e of emp">
+    
+            <td>{{e.id}}</td>
+    
+            <td>{{e.name}}</td>
+    
+            <td>{{e.address}}</td>
+    
+            <td>{{e.mobno}}</td>
+    
+            <td>{{e.email}}</td>
+            <td>  
+    
+            <button style="color: rgb(255, 255, 255); background-color: rgb(18, 18, 152);border-color: aqua;" (click)="edit(e.id)">Edit</button>
+    
+            </td>   
+    
+    
+            <td>
+    
+               <button style="color: rgb(255, 255, 255); background-color: rgb(235, 35, 35);border-color: rgb(235, 144, 144);"(click)="deleteDataById(e.id)">Delete</button>
+    
+            </td>        
+    
+        </tr>
+    
+    </table>
+    <div  >
+        
+<form [formGroup]="employeeform" (ngSubmit)="onSubmit()">
+
+<div class="col-sm-76">
+<label  class="col-sm-2 col-form-label" style="margin-left: 20cm; color: rgb(31, 31, 196);"><b>Employee Name: </b></label>
+<input type="text" placeholder="name" formControlName="name" [pattern]="namepattern" style="margin-left: 20cm;">
+<div style="color: red;" *ngIf="employeeform.controls['name'].touched && employeeform.controls['name'].invalid">
+    <span *ngIf="employeeform.controls['name'].hasError('required')" style="margin-left: 20cm;">name is required</span>
+    <span *ngIf="employeeform.controls['name'].hasError('pattern')"style="margin-left: 20cm;">only alphabate with
+        space between 2 to 20 charecters
+    </span>
+</div>
+</div><br>
+
+<div>
+<label for="address" style="margin-left: 20cm;color: rgb(31, 31, 196);"><b>Employee address: </b></label>
+<input type="text" placeholder="address" formControlName="address" required style="margin-left: 20cm;">
+<div *ngIf="employeeform.controls['address'].touched && employeeform.controls['address'].invalid">
+    <span *ngIf="employeeform.controls['address'].hasError('required')"style="margin-left: 20cm;">address is required</span>
+</div>
+</div><br>
+
+<div>
+<label for="mobno" style="margin-left: 20cm;color: rgb(31, 31, 196);"><b>Employee mobno: </b></label>
+<input type="text" placeholder="mobile no" formControlName="mobno" required style="margin-left: 20cm;">
+<div *ngIf="employeeform.controls['mobno'].touched && employeeform.controls['mobno'].invalid">
+    <span *ngIf="employeeform.controls['mobno'].hasError('required')"style="margin-left: 20cm;">mobile no is required</span>
+    <span *ngIf="employeeform.controls['mobno'].getError?.length"style="margin-left: 20cm;">use 10 digit mob no</span>
+</div>
+</div><br>
+
+<div>
+<label for="email" style="margin-left: 20cm;color: rgb(31, 31, 196);"><b>Employee email: </b></label>
+<input type="text" placeholder="email" formControlName="email" [pattern]="emailpattern" required style="margin-left: 20cm;">
+<div *ngIf="employeeform.controls['email'].touched && employeeform.controls['email'].invalid">
+    <span *ngIf="employeeform.controls['email'].hasError('required')"style="margin-left: 20cm;">email is required</span>
+    <span *ngIf="employeeform.controls['email'].hasError('pattern')"style="margin-left: 20cm;">inavlid email</span>
+</div>
+</div><br>
+<div>
+    <label for="id" style="margin-left: 20cm;color: rgb(31, 31, 196);"><b>Employee id: </b></label>
+    <input type="text" placeholder="id" formControlName="id" required style="margin-left: 20cm;">
+    <div *ngIf="employeeform.controls['id'].touched && employeeform.controls['email'].invalid"style="margin-left: 20cm;">
+        <span *ngIf="employeeform.controls['id'].hasError('required')"style="margin-left: 20cm;">Id is required</span>
+       
+    </div>
+    </div><br>
+
+<div>
+<input type="submit" value="submit" style="margin-left: 20cm;">
+</div>
+<div>
+    <input type="reset" value="reset"style="margin-left: 20cm;">
+    </div>
+</form>
+
+</div>
+
+
+
+
+</body> 
