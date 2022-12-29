@@ -1,0 +1,92 @@
+<body style="margin-left: 10cm;">
+<h1 style="color:rgb(11, 13, 138);margin-left: 2.5cm;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" ><b>Registration Form</b></h1>
+<div class="parent">
+
+ 
+<div style="box-sizing:content-box;width: 100% ;padding: 5px;background-color: rgb(85, 188, 243); width: 10cm; height: 25cm;">
+<form [formGroup]="empform">
+  <br>
+<div ><mat-label><b>Full Name</b></mat-label></div>
+<div>
+    <mat-form-field appearance ="fill">
+    <input matInput placeholder="Enter full Name" formControlName="fullName">
+    <mat-icon class="material-icons" mat-icon matPrefix >people</mat-icon>
+    <mat-hint >Enter full Name</mat-hint>
+    </mat-form-field>
+    </div>
+    <br>
+    <div><mat-label><b>Email</b></mat-label></div>
+<div>
+    <mat-form-field appearance ="fill">
+      <mat-icon class="material-icons" mat-icon matPrefix>email</mat-icon>
+    <input matInput  placeholder="Enter email" formControlName="email">
+    
+    <mat-hint>Enter email Id</mat-hint>
+    </mat-form-field>
+    </div>
+    <br>
+    <div><mat-label><b>Password</b></mat-label></div>
+    <div>
+        <mat-form-field appearance ="fill">
+        <input matInput placeholder="Enter password" formControlName="password">
+        <mat-icon class="material-icons" mat-icon matPrefix>password</mat-icon>
+        <mat-hint>Enter password</mat-hint>
+        </mat-form-field>
+        </div>
+       <br>
+        <div><mat-label formControlName="gender"><b>Gender:</b></mat-label></div>
+        
+        <mat-radio-button value="Male" color="primary">
+          <mat-icon class="material-icons" mat-icon>male</mat-icon>
+          Male
+          <mat-radio-button value="Female" color="primary"></mat-radio-button>
+            <mat-icon class="material-icons" mat-icon>female</mat-icon>
+            Female
+            <mat-radio-button value="Other" color="primary"></mat-radio-button>
+              <mat-icon class="material-icons" mat-icon>transgender</mat-icon>
+              Other
+            </mat-radio-button><br><br>
+            
+
+          <br>
+           <div>
+            <div><mat-label><b>Date</b></mat-label></div>
+           <mat-form-field appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dob" class="form-control">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconPrefix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          </div>
+          
+          
+           <br>
+            <div><mat-label><b>Mobile No</b></mat-label></div>
+            <div>
+                <mat-form-field appearance ="fill">
+                <input matInput placeholder="Enter mob" formControlName="mob">
+                <mat-icon class="material-icons" mat-icon matPrefix>phone</mat-icon>
+                <mat-hint>Enter Mobile</mat-hint>
+                </mat-form-field>
+                </div>
+              
+                <br>
+                <div><mat-label><b>Skills</b></mat-label></div>
+                <mat-form-field appearance="fill">
+                  <mat-label>Choose your skills</mat-label>
+                  <mat-select formControlName="skills">
+                    <mat-option value="Angular Basic"> Angular Basic</mat-option>
+                    <mat-option value="Angular Intermediate">Angular Intermediate</mat-option>
+                    <mat-option value="Angular Advanced">Angular Advanced</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                
+                <br>
+                <div>
+                <button mat-raised-button class="createUserBtn" color="primary" type="submit" (click)="onSubmit()">Submit</button>
+               </div>  
+              </form>
+              </div>
+            </div>            
+</body>            

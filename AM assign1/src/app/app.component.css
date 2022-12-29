@@ -1,0 +1,15 @@
+
+.split {
+   height: 100%;
+   width: 50%;
+   position: fixed;
+   top: 0;
+}
+.left {
+   margin-left: 5cm;
+   background-color: yellowgreen;
+}
+.right {
+   margin-right: 5cm;
+   background-color: aquamarine;
+}
