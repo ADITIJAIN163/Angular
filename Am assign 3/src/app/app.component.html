@@ -1,0 +1,110 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav>
+      <mat-nav-list (click)="sidenav.close()">
+        <a mat-list-item>
+
+          <mat-icon>Angular</mat-icon>
+
+          <span>Angular</span>
+
+      </a>
+      <a mat-list-item>
+
+          <mat-icon>table</mat-icon>
+
+          <span>Sql</span>
+
+      </a>
+      <a mat-list-item>
+
+        <mat-icon>chat</mat-icon>
+
+        <span>Communication</span>
+
+    </a>
+    <a mat-list-item>
+
+      <mat-icon>add</mat-icon>
+
+      <span>Add more courses</span>
+
+  </a>
+         
+
+      </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+
+      <button mat-icon-button (click)="sidenav.open()">
+
+          <mat-icon>menu</mat-icon>
+
+      </button>
+
+      <a mat-button routerLink="/home">
+
+        <mat-icon>house</mat-icon>
+
+        Home
+
+    </a>
+
+      <a mat-button routerLink="/reg">
+
+          <mat-icon>person_add</mat-icon>
+
+          Register
+
+      </a>
+
+
+
+      <a mat-button routerLink="/log">
+
+          <mat-icon>account_circle</mat-icon>
+         
+          Login
+
+      </a>
+      <a mat-button [matMenuTriggerFor]="dropdown">
+
+        <mat-icon>people</mat-icon>
+
+        About us
+    </a>
+    <mat-menu #dropdown>
+      <button mat-menu-item (click)="openDialog()" >CEO Message</button>
+      <button mat-menu-item (click)="openDialog1()">Contact Details</button> 
+
+  </mat-menu>
+    
+
+
+  </mat-toolbar>
+
+  <div>
+
+    <mat-list>
+  
+        <mat-list-item>Angular</mat-list-item>
+  
+        <mat-divider></mat-divider>
+  
+        <mat-list-item>React</mat-list-item>
+  
+        <mat-divider></mat-divider>
+  
+    </mat-list>
+  
+  
+  
+  </div>
+
+<router-outlet></router-outlet>
+</mat-sidenav-container>
+
+
+
+
