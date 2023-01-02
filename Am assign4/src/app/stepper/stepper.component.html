@@ -1,0 +1,299 @@
+<div>
+
+
+
+    <mat-stepper #stepper>
+    
+    
+    
+        <mat-step [stepControl]="firstFormGroup">
+    
+    
+          <form [formGroup]="firstFormGroup" (ngSubmit)="onSubmit()">
+    
+    
+    
+            <ng-template matStepLabel>Basic Details</ng-template>
+    
+    
+    
+            <div><mat-label><b>Name</b></mat-label></div>
+            <div>
+                <mat-form-field appearance ="fill">
+                <input matInput placeholder="Enter Name" formControlName="Name">
+                
+                <mat-hint>Enter Name</mat-hint>
+                </mat-form-field>
+                </div>
+                <br>
+      
+                <div><mat-label><b>Email</b></mat-label></div>
+                <div>
+                    <mat-form-field appearance ="fill">
+                    <input matInput placeholder="Enter Email" formControlName="email">
+                    
+                    <mat-hint>Enter Email</mat-hint>
+                    </mat-form-field>
+                    </div>
+                    <br>
+          
+                
+                    <div><mat-label><b>Mother's Name</b></mat-label></div>
+                    <div>
+                        <mat-form-field appearance ="fill">
+                        <input matInput placeholder="Enter Mother's Name" formControlName="MN">
+                       
+                        <mat-hint>Enter Mother's Name</mat-hint>
+                        </mat-form-field>
+                        </div>
+                        <br>
+              
+                        <div><mat-label><b>Father's Name</b></mat-label></div>
+                        <div>
+                            <mat-form-field appearance ="fill">
+                            <input matInput placeholder="Enter Father's Name" formControlName="FN">
+                           
+                            <mat-hint>Enter Father's Name</mat-hint>
+                            </mat-form-field>
+                            </div>
+                            <br>
+                  
+             <br>
+             <div><mat-label><b>Gender:</b></mat-label></div>
+
+               <mat-radio-group aria-label="gender"  formControlName="gender">  
+
+               <mat-radio-button value="Male" color="primary">
+
+                 <mat-icon class="material-icons" mat-icon>male</mat-icon>
+
+                 Male
+
+                 <mat-radio-button value="Female" color="primary"></mat-radio-button>
+
+                   <mat-icon class="material-icons" mat-icon>female</mat-icon>
+
+                   Female
+
+                   <mat-radio-button value="Other" color="primary"></mat-radio-button>
+
+                     <mat-icon class="material-icons" mat-icon>transgender</mat-icon>
+
+                     Other
+
+                   </mat-radio-button><br><br>
+
+                   </mat-radio-group><br><br>
+                 <div>
+                    <div><mat-label><b>Date</b></mat-label></div>
+                   <mat-form-field appearance="fill">
+                  <mat-label>Choose a date</mat-label>
+                  <input matInput [matDatepicker]="picker" formControlName="Date" class="form-control">
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker-toggle matIconPrefix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                  </div>
+                  <br>
+                  <div><mat-label><b>Mobile No</b></mat-label></div>
+                  <div>
+                      <mat-form-field appearance ="fill">
+                      <input matInput placeholder="Enter mob" formControlName="Mobile">
+                      <mat-icon class="material-icons" mat-icon matPrefix>phone</mat-icon>
+                      <mat-hint>Enter Mobile</mat-hint>
+                      </mat-form-field>
+                      </div>
+                      <br>
+            <div>
+    
+    
+    
+              <button mat-stroked-button color="primary" matStepperNext>Next</button>
+    
+    
+    
+            </div>
+    
+    
+    
+          </form>
+    
+    
+    
+        </mat-step>
+    
+    
+    
+        <mat-step [stepControl]="firstFormGroup" label="Bank details">
+    
+    
+    
+          <form [formGroup]="firstFormGroup" (ngSubmit)="onSubmit()">
+    
+    
+    
+            <div><mat-label><b>Name</b></mat-label></div>
+            <div>
+                <mat-form-field appearance ="fill">
+                <input matInput placeholder="Enter Name" formControlName="AName">
+                <mat-icon class="material-icons" mat-icon matPrefix>person</mat-icon>
+                <mat-hint>Enter Name</mat-hint>
+                </mat-form-field>
+                </div>
+                <br>
+      
+                <div><mat-label><b>Bank acc No.</b></mat-label></div>
+                <div>
+                    <mat-form-field appearance ="fill">
+                    <input matInput placeholder="Enter Bank acc No." formControlName="BNo">
+                   
+                    <mat-hint>Enter Bank acc No.</mat-hint>
+                    </mat-form-field>
+                    </div>
+                    <br>
+          
+                
+                    <div><mat-label><b>Bank Name</b></mat-label></div>
+                    <div>
+                        <mat-form-field appearance ="fill">
+                        <input matInput placeholder="Bank Name" formControlName="BName">
+                       
+                        <mat-hint>Bank Name</mat-hint>
+                        </mat-form-field>
+                        </div>
+                        <br>
+              
+                        <div><mat-label><b>IFSC code</b></mat-label></div>
+                        <div>
+                            <mat-form-field appearance ="fill">
+                            <input matInput placeholder="IFSC code" formControlName="IFSC">
+                           
+                            <mat-hint>IFSC code</mat-hint>
+                            </mat-form-field>
+                            </div>
+                            <br>
+                            <div><mat-label><b>You have internet banking:</b></mat-label></div>
+
+                            <mat-radio-group   formControlName="q1">  
+
+                            <mat-radio-button value="Yes" color="primary">
+
+                              <mat-icon class="material-icons" mat-icon>done</mat-icon>
+
+                              YES
+
+                              <mat-radio-button value="No" color="primary"></mat-radio-button>
+
+                                <mat-icon class="material-icons" mat-icon>clear</mat-icon>
+
+                                NO
+
+                                </mat-radio-button><br><br>
+
+                                </mat-radio-group><br><br>
+                                
+                            <mat-radio-group   formControlName="q2">  
+
+                              <mat-radio-button value="Yes" color="primary">
+  
+                                <mat-icon class="material-icons" mat-icon>done</mat-icon>
+  
+                                YES
+  
+                                <mat-radio-button value="No" color="primary"></mat-radio-button>
+  
+                                  <mat-icon class="material-icons" mat-icon>clear</mat-icon>
+  
+                                  NO
+  
+                                  </mat-radio-button><br><br>
+  
+                                  </mat-radio-group><br><br>
+    
+            <div>
+    
+    
+    
+              <button mat-stroked-button color="primary" matStepperPrevious>Back</button>
+    
+    
+    
+              <button mat-stroked-button color="primary" matStepperNext>Next</button>
+    
+    
+    
+            </div>
+    
+    
+    
+          </form>
+    
+    
+    
+        </mat-step>
+    
+        <mat-step [stepControl]="firstFormGroup" label="Communication Address" (ngSubmit)="onSubmit()">
+    
+    
+    
+            <form [formGroup]="firstFormGroup">
+      
+      
+      
+              <div><mat-label><b>Permanent Address</b></mat-label></div>
+                    <div>
+                        <mat-form-field appearance ="fill">
+                        <input matInput placeholder="Permanent Address" formControlName="PerA">
+                       
+                        <mat-hint>Permanent Address</mat-hint>
+                        </mat-form-field>
+                        </div>
+                        <br>
+                  <br>
+        
+                  <div><mat-label><b>Permanent Address</b></mat-label></div>
+                  <div>
+                      <mat-form-field appearance ="fill">
+                      <input matInput placeholder="Enter Permanent Address" formControlName="PerA">
+                     
+                      <mat-hint>Enter Permanent Address</mat-hint>
+                      </mat-form-field>
+                      </div>
+                      <br>
+            
+                  
+                    
+      
+              <div>
+      
+      
+      
+                <button mat-stroked-button color="primary" matStepperPrevious>Back</button>
+      
+      
+
+      
+                <div>
+                  <input type="submit" value="submit" style="margin-left: 0.5cm;">
+                  </div>
+      
+              </div>
+      
+      
+      
+            </form>
+      
+      
+      
+          </mat-step>
+    
+    
+           
+    
+    
+      </mat-stepper>
+    
+    
+    
+    
+    </div>

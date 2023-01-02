@@ -1,0 +1,43 @@
+<body style="margin-left: 10cm;">
+    <h1 style="color:rgb(11, 13, 138);margin-left: 2.5cm;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" ><b>User Login</b></h1>
+    <div class="parent">
+    
+     
+    <div style="box-sizing:content-box;width: 100% ;padding: 5px;background-color: rgb(85, 188, 243); width: 10cm; height: 10cm;">
+    <form [formGroup]="empform">
+      <br>
+    <div ><mat-label><b>User Name</b></mat-label></div>
+    <div>
+        <mat-form-field appearance ="fill">
+        <input matInput placeholder="Enter User Name" formControlName="userName">
+        <mat-icon class="material-icons" mat-icon matPrefix >people</mat-icon>
+        <mat-hint >Enter User Name</mat-hint>
+        </mat-form-field>
+        </div>
+        <br>
+        
+        <br>
+        <div><mat-label><b>Password</b></mat-label></div>
+        <div>
+            <mat-form-field appearance ="fill">
+            <input matInput placeholder="Enter password" formControlName="password">
+            <mat-icon class="material-icons" mat-icon matPrefix>password</mat-icon>
+            <mat-hint>Enter password</mat-hint>
+            </mat-form-field>
+            </div>
+           <br>
+           
+                    <br>
+                    
+                   <a mat-button routerLink="/step">
+
+                    <mat-icon>person_add</mat-icon>
+          
+                    Submit
+          
+                </a> 
+                  </form>
+                  </div>
+                </div> 
+                <router-outlet></router-outlet>           
+    </body>            
